@@ -1,8 +1,12 @@
 import { NestFactory } from '@nestjs/core';
+import { Transport, MicroserviceOptions } from '@nestjs/microservices';
 import { CryptoModule } from './crypto.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(CryptoModule);
-  await app.listen(3000);
+  const transport = Transport.TCP;
+  const app = await NestFactory.createMicroservice<MicroserviceOptions>(CryptoModule, {
+    transport
+  });
+  app.listen();
 }
 bootstrap();
