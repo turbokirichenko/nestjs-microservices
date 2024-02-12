@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/proxy/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/proxy/tsconfig.app.json"
+  },
+  "projects": {
+    "shared": {
+      "type": "library",
+      "root": "libs/shared",
+      "entryFile": "index",
+      "sourceRoot": "libs/shared/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/shared/tsconfig.lib.json"
+      }
+    },
+    "proxy": {
+      "type": "application",
+      "root": "apps/proxy",
+      "entryFile": "main",
+      "sourceRoot": "apps/proxy/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/proxy/tsconfig.app.json"
+      }
+    },
+    "crypto": {
+      "type": "application",
+      "root": "apps/crypto",
+      "entryFile": "main",
+      "sourceRoot": "apps/crypto/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/crypto/tsconfig.app.json"
+      }
+    }
+  },
+  "monorepo": true,
+  "root": "apps/proxy"
+}
