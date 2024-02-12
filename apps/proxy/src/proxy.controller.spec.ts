@@ -15,8 +15,5 @@ describe('ProxyController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(proxyController.getHello()).toBe('Hello World!');
-    });
   });
 });

@@ -7,7 +7,7 @@ export const CRYPTO_SERVICE = 'CRYPTO_SERVICE'
 
 @Module({
   imports: [ ClientsModule.register([
-    { name: CRYPTO_SERVICE, transport: Transport.TCP }
+    { name: 'CRYPTO_SERVICE', transport: Transport.TCP }
   ])],
   controllers: [ProxyController],
   providers: [ProxyService],
